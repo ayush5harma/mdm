@@ -28,7 +28,7 @@ type AvailableOSUpdatesResponseItem struct {
 	ProductName       string  `json:"product_name"`
 	Version           string  `json:"version"`
 	Build             string  `json:"build"`
-	DownloadSize      float64 `json:"download_size"`
+	DownloadSize      int `json:"download_size"`
 	InstallSize       float64 `json:"install_size"`
 
 	// Each entry represents an app identifier that is closed to install this update (macOS only).
