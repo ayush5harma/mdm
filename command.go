@@ -4,6 +4,7 @@ package mdm
 //go:generate go run generate_payload_code.go -out new_payload.go
 
 // CommandRequest represents an MDM command request
+
 type CommandRequest struct {
 	UDID string `json:"udid"`
 	Command
