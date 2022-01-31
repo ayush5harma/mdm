@@ -3,10 +3,6 @@ package mdm
 //go:generate go run generate_marshaler_code.go -out marshaler.go
 //go:generate go run generate_payload_code.go -out new_payload.go
 
-import (
-	"github.com/satori/go.uuid"
-)
-
 // CommandRequest represents an MDM command request
 type CommandRequest struct {
 	UDID string `json:"udid"`
@@ -41,9 +37,14 @@ type Command struct {
 	InstallMedia
 	RemoveMedia
 	Settings
+	RefreshCellularPlans
 }
 
 // The following commands are in the order provided by the apple documentation.
+
+type RefreshCellularPlans struct {
+	ESIMServerUrl string `plist:"eSIMServerUrl,omitempty" json:"esim_server_url,omitempty"`
+}
 
 // InstallProfile is an InstallProfile MDM Command
 type InstallProfile struct {

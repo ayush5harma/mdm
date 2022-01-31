@@ -140,6 +140,15 @@ func (c *Command) MarshalPlist() (interface{}, error) {
 			ClearPasscode: c.ClearPasscode,
 		}, nil
 
+	case "RefreshCellularPlans":
+		return &struct {
+			RequestType string
+			RefreshCellularPlans
+		}{
+			RequestType:          c.RequestType,
+			RefreshCellularPlans: c.RefreshCellularPlans,
+		}, nil
+
 	case "EraseDevice":
 		return &struct {
 			RequestType string
@@ -419,6 +428,20 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
 		c.ClearPasscode = x.ClearPasscode
+		return nil
+
+	case "RefreshCellularPlans":
+		var x struct {
+			RequestType string `json:"request_type"`
+			UDID        string `json:"udid"`
+			RefreshCellularPlans
+		}
+		if err := json.Unmarshal(d, &x); err != nil {
+			return err
+		}
+		c.RequestType = x.RequestType
+		c.UDID = x.UDID
+		c.RefreshCellularPlans = x.RefreshCellularPlans
 		return nil
 
 	case "EraseDevice":
