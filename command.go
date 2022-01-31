@@ -5,6 +5,10 @@ package mdm
 
 // CommandRequest represents an MDM command request
 
+import (
+	"github.com/satori/go.uuid"
+)
+
 type CommandRequest struct {
 	UDID string `json:"udid"`
 	Command
