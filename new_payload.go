@@ -72,6 +72,9 @@ func NewPayload(request *CommandRequest) (*Payload, error) {
 	case "RefreshCellularPlans":
 		payload.Command.RefreshCellularPlans = request.RefreshCellularPlans
 
+	case "RequestUnlockToken":
+		payload.Command.RequestUnlockToken = request.RequestUnlockToken
+
 	case "ProfileList",
 		"ProvisioningProfileList",
 		"CertificateList",
