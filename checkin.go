@@ -31,7 +31,7 @@ type auth struct {
 type update struct {
 	Token                 hexData
 	PushMagic             string
-	UnlockToken           hexData
+	UnlockToken           string
 	AwaitingConfiguration bool
 	userTokenUpdate
 }
