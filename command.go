@@ -43,12 +43,13 @@ type Command struct {
 	RemoveMedia
 	Settings
 	RefreshCellularPlans
+	RequestUnlockToken
 }
 
 // The following commands are in the order provided by the apple documentation.
 
 type RefreshCellularPlans struct {
-	ESIMServerUrl string `plist:"eSIMServerURL,omitempty" json:"esim_server_url,omitempty"`
+	ESIMServerUrl string `plist:"eSIMServerURLd,omitempty" json:"esim_server_url,omitempty"`
 }
 
 // InstallProfile is an InstallProfile MDM Command
@@ -230,6 +231,10 @@ type ScheduleOSUpdate struct {
 // ScheduleOSUpdateScan schedules a (background) OS SoftwareUpdate check
 type ScheduleOSUpdateScan struct {
 	Force bool `plist:",omitempty" json:"force,omitempty"`
+}
+
+type RequestUnlockToken struct {
+	UUID string `plist:",omitempty" json:"uuid,omitempty"`
 }
 
 type data []byte
