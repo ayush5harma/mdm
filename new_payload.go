@@ -42,6 +42,9 @@ func NewPayload(request *CommandRequest) (*Payload, error) {
 	case "DeviceLock":
 		payload.Command.DeviceLock = request.DeviceLock
 
+	case "RequestUnlockToken":
+		payload.Command.RequestUnlockToken = request.RequestUnlockToken
+
 	case "ClearPasscode":
 		payload.Command.ClearPasscode = request.ClearPasscode
 
