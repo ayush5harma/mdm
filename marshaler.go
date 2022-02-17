@@ -221,15 +221,6 @@ func (c *Command) MarshalPlist() (interface{}, error) {
 			RefreshCellularPlans: c.RefreshCellularPlans,
 		}, nil
 
-	case "RequestUnlockToken":
-		return &struct {
-			RequestType string
-			RequestUnlockToken
-		}{
-			RequestType:        c.RequestType,
-			RequestUnlockToken: c.RequestUnlockToken,
-		}, nil
-
 	default:
 		return nil, fmt.Errorf("unknown request type: %s", c.RequestType)
 	}
@@ -563,20 +554,6 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
 		c.RefreshCellularPlans = x.RefreshCellularPlans
-		return nil
-
-	case "RequestUnlockToken":
-		var x struct {
-			RequestType string `json:"request_type"`
-			UDID        string `json:"udid"`
-			RequestUnlockToken
-		}
-		if err := json.Unmarshal(d, &x); err != nil {
-			return err
-		}
-		c.RequestType = x.RequestType
-		c.UDID = x.UDID
-		c.RequestUnlockToken = x.RequestUnlockToken
 		return nil
 
 	default:
