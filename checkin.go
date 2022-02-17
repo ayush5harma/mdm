@@ -63,6 +63,5 @@ type DEPEnrollmentRequest struct {
 type hexData []byte
 
 func (d hexData) String() string {
-	// return hex.EncodeToString(d)
-	return string(d[:])
+	return hex.EncodeToString(d)
 }
