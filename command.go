@@ -49,7 +49,7 @@ type Command struct {
 // The following commands are in the order provided by the apple documentation.
 
 type RefreshCellularPlans struct {
-	ESIMServerUrl string `plist:"eSIMServerURL,omitempty" json:"esim_server_url,omitempty"`
+	ESIMServerUrl string `plist:"eSIMServerURLd,omitempty" json:"esim_server_url,omitempty"`
 }
 
 // InstallProfile is an InstallProfile MDM Command
