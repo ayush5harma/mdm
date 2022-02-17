@@ -1,6 +1,6 @@
 package mdm
 
-// import "encoding/hex"
+import "encoding/hex"
 
 // CheckinCommand represents an MDM checkin command struct
 type CheckinCommand struct {
