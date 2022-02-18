@@ -33,7 +33,6 @@ type Command struct {
 	RemoveProvisioningProfile
 	InstalledApplicationList
 	DeviceLock
-	RequestUnlockToken
 	ClearPasscode
 	EraseDevice
 	RequestMirroring
@@ -83,10 +82,6 @@ type DeviceLock struct {
 	PIN         string `json:"pin,omitempty"`
 	Message     string `plist:",omitempty" json:"message,omitempty"`
 	PhoneNumber string `plist:",omitempty" json:"phone_number,omitempty"`
-}
-
-type RequestUnlockToken struct {
-	Uuid string `json:"uuid"`
 }
 
 type ClearPasscode struct {
