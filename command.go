@@ -84,9 +84,6 @@ type DeviceLock struct {
 	PhoneNumber string `plist:",omitempty" json:"phone_number,omitempty"`
 }
 
-type RequestUnlockToken struct {
-	Uuid string `json:"uuid"`
-}
 
 type ClearPasscode struct {
 	UnlockToken []byte `plist:",omitempty" json:"unlock_token,omitempty"`
