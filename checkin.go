@@ -1,6 +1,7 @@
 package mdm
 
 import "encoding/hex"
+import "log"
 
 // CheckinCommand represents an MDM checkin command struct
 type CheckinCommand struct {
@@ -63,5 +64,6 @@ type DEPEnrollmentRequest struct {
 type hexData []byte
 
 func (d hexData) String() string {
+	log.Println("returned hex string from byte data from checkin.go")
 	return hex.EncodeToString(d)
 }
